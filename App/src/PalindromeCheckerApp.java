@@ -1,16 +1,16 @@
 /*
-Use case 2: Print a Hardcoded Palindrome Result
+Use Case 3: Palindrome Check Using String Reverse
 
 Description :
 
-This is the use case 2 part of the app
-This class demonstrates whether a string is palindrome or not
-we compare the string using for loop and print if the given string is palindrome or not
+This is the use case 3 part of the app
+This class demonstrates whether a string is palindrome or not by reversing the string
+and comparing it with the original string
 
-our goal is to display whether a hardcoded string is a palindrome
+our goal is to check whether a string is a palindrome by reversing it.
 
 @author - Srijan
-@version - 2.0
+@version - 3.0
 
 */
 import java.util.Scanner;
@@ -20,21 +20,16 @@ public class PalindromeCheckerApp {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Input text: ");
-        String input = scanner.nextLine();
+        String original = scanner.nextLine();
+        String reversed = "";
 
-        boolean isPalindrome = true;
-        int length = input.length();
-
-        for (int i = 0; i < length / 2; i++) {
-            if (input.charAt(i) != input.charAt(length - 1 - i)) {
-                isPalindrome = false;
-                break;
-            }
+        for (int i = original.length() - 1; i >= 0; i--) {
+            reversed = reversed + original.charAt(i);
         }
 
         System.out.println("Is it a Palindrome? : ");
 
-        if (isPalindrome) {
+        if (original.equals(reversed)) {
             System.out.println("true");
         } else {
             System.out.println("false");
